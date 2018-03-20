@@ -1,0 +1,23 @@
+/*
+* @Author: Sun Yu Jie
+* @Date:   2018-03-20 22:19:52
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-20 22:23:00
+*/
+
+.footer{
+  padding-bottom: 10px;
+}
+.footer .links{
+  text-align: center;
+  color: #666;
+  line-height: 30px;
+}
+.footer .links .link{
+  padding: 0 10px;
+}
+.footer .copyright{
+  text-align: center;
+  color: #666;
+  line-height: 30px;
+}
