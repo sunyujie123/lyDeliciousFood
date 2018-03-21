@@ -3,10 +3,8 @@ const path                = require('path');
 const ExtractTextPlugin   = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin   = require('html-webpack-plugin');
 
-
 // 环境变量的配置 dev / online
 const WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
-console.log(WEBPACK_ENV)
 
 // 获取html-webpack-plugin参数的方法 
 var getHtmlConfig = function(name,title){
@@ -25,7 +23,7 @@ const config = {
  entry: {
         'common'            : ['./src/page/common/index.js'],
         'index'             : ['./src/page/index/index.js'],
-        'login'             : ['./src/page/login/index.js'],
+        'user-login'        : ['./src/page/user-login/index.js'],
         'result'            : ['./src/page/result/index.js']
     },
     output: {
@@ -62,7 +60,7 @@ const config = {
         new ExtractTextPlugin("css/[name].css"),
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
     ]
 };

@@ -2,7 +2,7 @@
 * @Author: Sun Yu Jie
 * @Date:   2018-03-20 18:38:38
 * @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-20 21:01:27
+* @Last Modified time: 2018-03-21 22:26:47
 */
 const hoGan = require('hogan');
 const config = {
@@ -13,18 +13,21 @@ const _mm = {
   request:function(param){
     const _this = this;
     $.ajax({
-      type : param.method,
-      url : param.url || '',
-      dataType : param.type || 'json',
-      success : function (res){
+      type        : param.method  || 'get',
+      url         : param.url     || '',
+      dataType    : param.type    || 'json',
+      data        : param.data    || '',
+      success : function(res){
+        // 请求成功
         if(0 === res.status){
-          // 请求成功
-          typeof param.success === 'function' && param.success(res.data,res.msg);
-        }else if(10 === res.status){
-          // 没有登录状态，请求登录
-          _this.doLogin();
-        }else if(1 === res.status){
-          // 请求数据错误
+          typeof param.success === 'function' && param.success(res.data, res.msg);
+        }
+        // 没有登录状态，需要强制登录
+        else if(10 === res.status){
+           _this.doLogin();
+        }
+        // 请求数据错误
+        else if(1 === res.status){
           typeof param.error === 'function' && param.error(res.msg);
         }
       },
@@ -34,7 +37,7 @@ const _mm = {
     });
   },
   // 获取服务器地址
-  getServerUrl: function(path){
+  getServerUrl : function(path){
     return config.serverHost + path;
   },
   // 获取url地址参数
@@ -58,29 +61,29 @@ const _mm = {
     alert(msg||'操作失败')
   },
   // 字段验证 支持非空、手机、邮箱
-  validate: function(value,type){
-    const value = $.trim(value);
+  validate : function(value, type){
+    const val = $.trim(value);
     // 非空验证
     if('require' === type){
       return !!value;
     }
     // 手机号验证
     if('phone' === type){
-      return /^1\d{10}$/.test(value);
+      return /^1\d{10}$/.test(val);
     }
     // 邮箱格式验证
-    if('email' === type){
-      return /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(value);
-    }
+     if('email' === type){
+            return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(val);
+        }
   },
   // 统一登录处理
-  doLogin: function(){
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+  doLogin : function(){
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
   // 跳转主页
-  goHome: function(){
-     window.location.href = './index.html?';
-  },
+  goHome : function(){
+    window.location.href = './index.html';
+  }
 };
 
 module.exports = _mm;
