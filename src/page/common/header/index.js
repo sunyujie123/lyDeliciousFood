@@ -2,7 +2,7 @@
 * @Author: Sun Yu Jie
 * @Date:   2018-03-20 22:26:34
 * @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-20 22:48:09
+* @Last Modified time: 2018-03-21 19:46:30
 */
 require('./index.css');
 const _mm     = require('util/mm.js');
@@ -46,4 +46,4 @@ const header = {
   }
 };
 
-header.init();
+module.exports = header.init();

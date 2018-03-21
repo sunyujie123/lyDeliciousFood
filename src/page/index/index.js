@@ -1,6 +1,11 @@
-const _mm = require('util/mm.js');
 require('page/common/header/index.js')
 require('page/common/nav/index.js')
+const _mm = require('util/mm.js');
+const navSide = require('page/common/nav-side/index.js');
+
+navSide.init({
+  name:'pass-update'
+})
 // 测试 request 方法
 // $.ajax({
 //   url:'http://apis.juhe.cn/cook/query?key=3b7bc7abf480f29a42e6d3ba74c614fe&menu=东坡肉',
