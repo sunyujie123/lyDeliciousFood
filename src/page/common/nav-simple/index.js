@@ -1,7 +1,9 @@
 /*
-* @Author: Sun Yu Jie
-* @Date:   2018-03-20 21:45:49
-* @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-20 21:46:14
+* @Author: Rosen
+* @Date:   2017-05-17 11:26:25
+* @Last Modified by:   Rosen
+* @Last Modified time: 2017-05-17 11:26:46
 */
-require('./index.css')
+
+'use strict';
+require('./index.css');

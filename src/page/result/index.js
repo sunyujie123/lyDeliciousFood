@@ -1,16 +1,18 @@
 /*
-* @Author: Sun Yu Jie
-* @Date:   2018-03-21 20:20:59
-* @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-21 20:44:00
+* @Author: Rosen
+* @Date:   2017-05-19 21:52:46
+* @Last Modified by:   Rosen
+* @Last Modified time: 2017-05-19 23:01:25
 */
+
+'use strict';
 require('./index.css');
-require('page/common/nav-simple/index.js')
-const _mm = require('util/mm.js');
+require('page/common/nav-simple/index.js');
+var _mm = require('util/mm.js');
 
 $(function(){
-  let type = _mm.getUrlParam('type') || 'default';
-  let $element = $('.' + type + '-success').show();
-  // 显示对应的提示元素
-  $element.show();
+    var type        = _mm.getUrlParam('type') || 'default',
+        $element    = $('.' + type + '-success');
+    // 显示对应的提示元素
+    $element.show();
 })

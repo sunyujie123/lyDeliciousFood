@@ -1,30 +1,30 @@
-require('page/common/header/index.js')
-require('page/common/nav/index.js')
-const _mm = require('util/mm.js');
-const navSide = require('page/common/nav-side/index.js');
+/*
+* @Author: Rosen
+* @Date:   2017-05-08 15:19:12
+* @Last Modified by:   Rosen
+* @Last Modified time: 2017-05-26 19:36:18
+*/
 
-navSide.init({
-  name:'pass-update'
-})
-// 测试 request 方法
-// $.ajax({
-//   url:'http://apis.juhe.cn/cook/query?key=3b7bc7abf480f29a42e6d3ba74c614fe&menu=东坡肉',
-//   method:'get',
-//   dataType: 'jsonp',
-//   success:function(result){
-//     console.log(result)
-//   },
-//   error:function(err){
-//     console.log(err)
-//   }
-// });
+'use strict';
+require('./index.css');
+require('page/common/nav/index.js');
+require('page/common/header/index.js');
+require('util/slider/index.js');
+var navSide         = require('page/common/nav-side/index.js');
+var templateBanner  = require('./banner.string');
+var _mm             = require('util/mm.js');
 
-// 测试获取路由参数方法
-// console.log(_mm.getUrlParam('test'));
-
-// 测试html模板解析
-// const html = '<div>{{data}}</div>';
-// const data = {
-//   data : 123
-// }
-// console.log(_mm.renderHtml(html,data))
+$(function() {
+    // 渲染banner的html
+    var bannerHtml  = _mm.renderHtml(templateBanner);
+    $('.banner-con').html(bannerHtml);
+    // 初始化banner
+    var $slider     = $('.banner').unslider({
+        dots: true
+    });
+    // 前一张和后一张操作的事件绑定
+    $('.banner-con .banner-arrow').click(function(){
+        var forward = $(this).hasClass('prev') ? 'prev' : 'next';
+        $slider.data('unslider')[forward]();
+    });
+});

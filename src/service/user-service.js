@@ -1,8 +1,8 @@
 /*
 * @Author: Rosen
 * @Date:   2017-05-17 17:04:32
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-24 17:11:19
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-22 22:29:21
 */
 
 'use strict';
@@ -11,28 +11,28 @@ var _mm = require('util/mm.js');
 
 var _user = {
     // 用户登录
-    login : function(userInfo, resolve, reject){
-        _mm.request({
-            url     : _mm.getServerUrl('/user/login.do'),
-            data    : userInfo,
-            method  : 'POST',
-            success : resolve,
-            error   : reject
-        });
-    },
+    // login : function(userInfo, resolve, reject){
+    //     _mm.request({
+    //         url     : 'http://127.0.0.1:3000/login',
+    //         data    : userInfo,
+    //         method  : 'POST',
+    //         success : resolve,
+    //         error   : reject
+    //     });
+    // },
     // 检查用户名
-    checkUsername : function(username, resolve, reject){
-        _mm.request({
-            url     : _mm.getServerUrl('/user/check_valid.do'),
-            data    : {
-                type    : 'username',
-                str     : username
-            },
-            method  : 'POST',
-            success : resolve,
-            error   : reject
-        });
-    },
+    // checkUsername : function(username, resolve, reject){
+    //     _mm.request({
+    //         url     : _mm.getServerUrl('/user/check_valid.do'),
+    //         data    : {
+    //             type    : 'username',
+    //             str     : username
+    //         },
+    //         method  : 'POST',
+    //         success : resolve,
+    //         error   : reject
+    //     });
+    // },
     // 用户注册
     register : function(userInfo, resolve, reject){
         _mm.request({

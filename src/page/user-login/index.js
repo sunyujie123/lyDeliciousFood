@@ -1,15 +1,17 @@
 /*
-* @Author: Sun Yu Jie
-* @Date:   2018-03-19 20:43:17
+* @Author: Rosen
+* @Date:   2017-05-08 22:26:19
 * @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-21 22:53:53
+* @Last Modified time: 2018-03-22 23:15:58
 */
+
+'use strict';
 require('./index.css');
 require('page/common/nav-simple/index.js');
 var _user   = require('service/user-service.js');
 var _mm     = require('util/mm.js');
 
-// 表单的错误提示
+// 表单里的错误提示
 var formError = {
     show : function(errMsg){
         $('.error-item').show().find('.err-msg').text(errMsg);
@@ -48,11 +50,19 @@ var page = {
             validateResult = this.formValidate(formData);
         // 验证成功
         if(validateResult.status){
-            _user.login(formData, function(res){
-                window.location.href = _mm.getUrlParam('redirect') || './index.html';
-            }, function(errMsg){
-                formError.show(errMsg);
-            });
+            const url = 'http://127.0.0.1:3000/login';
+            _mm.request({
+                url:url,
+                type:'post',
+                data:formData,
+            },(data)=>{
+                if(data.success){
+                    const username = data.data.result[0].username;
+                    window.location.href = _mm.getUrlParam('redirect') || './index.html';
+                }
+            },(err)=>{
+                formError.show(err);
+            })
         }
         // 验证失败
         else{
@@ -82,5 +92,5 @@ var page = {
     }
 };
 $(function(){
-  page.init();
+    page.init();
 });
