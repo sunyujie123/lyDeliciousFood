@@ -8,10 +8,6 @@
         <input class="input" id="phone" autocomplete="off" value="{{phone}}" />
     </div>
     <div class="form-line">
-        <span class="label">邮 箱：</span>
-        <input class="input" id="email" autocomplete="off" value="{{email}}" />
-    </div>
-    <div class="form-line">
         <span class="label">问 题：</span>
         <input class="input" id="question" autocomplete="off" value="{{question}}" />
     </div>

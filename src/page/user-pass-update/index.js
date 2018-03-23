@@ -1,8 +1,8 @@
 /*
 * @Author: Rosen
 * @Date:   2017-05-24 11:03:57
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-24 17:21:02
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-23 23:07:34
 */
 
 'use strict';
@@ -37,14 +37,19 @@ var page = {
             validateResult = _this.validateForm(userInfo);
             if(validateResult.status){
                 // 更改用户密码
-                _user.updatePassword({
-                    passwordOld : userInfo.password,
-                    passwordNew : userInfo.passwordNew
-                }, function(res, msg){
-                    _mm.successTips(msg);
-                }, function(errMsg){
-                    _mm.errorTips(errMsg);
-                });
+                const url = decodeURIComponent(window.location.search);
+                const uid = url.substr(5);
+                userInfo.uid = uid;
+                const url2 = 'http://127.0.0.1:3000/login/user/password/update';
+                _mm.request({
+                    url:url2,
+                    type:'post',
+                    data:userInfo
+                },(data)=>{
+                    if(data.msg){
+                        window.location.href = './result.html';
+                    }
+                })
             }
             else{
                 _mm.errorTips(validateResult.msg);

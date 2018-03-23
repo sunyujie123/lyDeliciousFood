@@ -1,8 +1,8 @@
 /*
 * @Author: Rosen
 * @Date:   2017-05-23 19:52:16
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 23:40:04
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-23 22:21:57
 */
 'use strict';
 require('./index.css');
@@ -33,19 +33,25 @@ var page = {
         $(document).on('click', '.btn-submit', function(){
             var userInfo = {
                 phone       : $.trim($('#phone').val()),
-                email       : $.trim($('#email').val()),
                 question    : $.trim($('#question').val()),
                 answer      : $.trim($('#answer').val())
             },
             validateResult = _this.validateForm(userInfo);
             if(validateResult.status){
+                const url = decodeURIComponent(window.location.search);
+                const uid = url.substr(5);
+                let url2 = 'http://127.0.0.1:3000/login/user/update';
+                userInfo.uid = uid;
                 // 更改用户信息
-                _user.updateUserInfo(userInfo, function(res, msg){
-                    _mm.successTips(msg);
-                    window.location.href = './user-center.html';
-                }, function(errMsg){
-                    _mm.errorTips(errMsg);
-                });
+                _mm.request({
+                    url:url2,
+                    type:'post',
+                    data:userInfo,
+                },(data)=>{
+                   if(data.msg){
+                    window.location.href = './result.html?uid='+uid
+                   }
+                })
             }
             else{
                 _mm.errorTips(validateResult.msg);
@@ -55,12 +61,18 @@ var page = {
     // 加载用户信息
     loadUserInfo : function(){
         var userHtml = '';
-        _user.getUserInfo(function(res){
-            userHtml = _mm.renderHtml(templateIndex, res);
-            $('.panel-body').html(userHtml);
-        }, function(errMsg){
-            _mm.errorTips(errMsg);
-        });
+        const url = decodeURIComponent(window.location.search);
+        const uid = url.substr(5);
+        const url2 = 'http://127.0.0.1:3000/login/user/info?uid='+uid;
+        _mm.request({
+            url:url2,
+            type:'get',
+        },(data)=>{
+            if(data.msg){
+                userHtml = _mm.renderHtml(templateIndex, data.userInfo);
+                $('.panel-body').html(userHtml);
+            }
+        })
     },
     // 验证字段信息
     validateForm : function(formData){
@@ -71,11 +83,6 @@ var page = {
         // 验证手机号
         if(!_mm.validate(formData.phone, 'phone')){
             result.msg = '手机号格式不正确';
-            return result;
-        }
-        // 验证邮箱格式
-        if(!_mm.validate(formData.email, 'email')){
-            result.msg = '邮箱格式不正确';
             return result;
         }
         // 验证密码提示问题是否为空

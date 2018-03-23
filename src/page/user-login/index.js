@@ -2,7 +2,7 @@
 * @Author: Rosen
 * @Date:   2017-05-08 22:26:19
 * @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-22 23:15:58
+* @Last Modified time: 2018-03-23 21:29:40
 */
 
 'use strict';
@@ -57,12 +57,12 @@ var page = {
                 data:formData,
             },(data)=>{
                 if(data.success){
-                    const username = data.data.result[0].username;
-                    window.location.href = _mm.getUrlParam('redirect') || './index.html';
-                }
-            },(err)=>{
-                formError.show(err);
-            })
+                    const uid = data.data.uid;
+                    window.location.href = './index.html?uid='+uid;
+                }else{
+                    formError.show(data.data)
+                };
+            });
         }
         // 验证失败
         else{

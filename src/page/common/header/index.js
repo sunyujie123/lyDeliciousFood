@@ -1,13 +1,16 @@
 /*
 * @Author: Rosen
 * @Date:   2017-05-18 19:30:12
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-27 19:46:42
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-23 23:11:24
 */
 
 'use strict';
 require('./index.css');
 var _mm     = require('util/mm.js');
+const url = decodeURIComponent(window.location.search);
+const uid = url.substr(5);
+$('.logo').attr('href','./index.html?uid='+uid)
 // 通用页面头部
 var header = {
     init : function(){

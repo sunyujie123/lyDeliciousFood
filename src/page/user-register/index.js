@@ -1,8 +1,8 @@
 /*
 * @Author: Rosen
 * @Date:   2017-05-22 09:08:57
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 23:30:23
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-23 23:06:27
 */
 
 'use strict';
@@ -29,19 +29,19 @@ var page = {
     bindEvent : function(){
         var _this = this;
         // 验证username
-        $('#username').blur(function(){
-            var username = $.trim($(this).val());
-            // 如果用户名为空，我们不做验证
-            if(!username){
-                return;
-            }
-            // 异步验证用户名是否存在
-            _user.checkUsername(username, function(res){
-                formError.hide();
-            }, function(errMsg){
-                formError.show(errMsg);
-            });
-        });
+        // $('#username').blur(function(){
+        //     var username = $.trim($(this).val());
+        //     // 如果用户名为空，我们不做验证
+        //     if(!username){
+        //         return;
+        //     }
+        //     // 异步验证用户名是否存在
+        //     _user.checkUsername(username, function(res){
+        //         formError.hide();
+        //     }, function(errMsg){
+        //         formError.show(errMsg);
+        //     });
+        // });
         // 注册按钮的点击
         $('#submit').click(function(){
             _this.submit();
@@ -61,7 +61,6 @@ var page = {
                 password        : $.trim($('#password').val()),
                 passwordConfirm : $.trim($('#password-confirm').val()),
                 phone           : $.trim($('#phone').val()),
-                email           : $.trim($('#email').val()),
                 question        : $.trim($('#question').val()),
                 answer          : $.trim($('#answer').val())
             },
@@ -69,11 +68,17 @@ var page = {
             validateResult = this.formValidate(formData);
         // 验证成功
         if(validateResult.status){
-            _user.register(formData, function(res){
-                window.location.href = './result.html?type=register';
-            }, function(errMsg){
-                formError.show(errMsg);
-            });
+            // 提交注册
+            let url = 'http://127.0.0.1:3000/regist'
+            _mm.request({
+                url:url,
+                type:'post',
+                data:formData,
+            },(data)=>{
+                if(data.success){
+                    window.location.href = './result.html'
+                }
+            })
         }
         // 验证失败
         else{
@@ -111,11 +116,6 @@ var page = {
         // 验证手机号
         if(!_mm.validate(formData.phone, 'phone')){
             result.msg = '手机号格式不正确';
-            return result;
-        }
-        // 验证邮箱格式
-        if(!_mm.validate(formData.email, 'email')){
-            result.msg = '邮箱格式不正确';
             return result;
         }
         // 验证密码提示问题是否为空

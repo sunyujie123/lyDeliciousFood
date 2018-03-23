@@ -1,8 +1,8 @@
 /*
 * @Author: Rosen
 * @Date:   2017-05-23 19:33:33
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 22:30:31
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-23 23:17:03
 */
 
 'use strict';
@@ -15,6 +15,7 @@ var _user           = require('service/user-service.js');
 var templateIndex   = require('./index.string');
 
 // page 逻辑部分
+
 var page = {
     init: function(){
         this.onLoad();
@@ -30,12 +31,19 @@ var page = {
     // 加载用户信息
     loadUserInfo : function(){
         var userHtml = '';
-        _user.getUserInfo(function(res){
-            userHtml = _mm.renderHtml(templateIndex, res);
-            $('.panel-body').html(userHtml);
-        }, function(errMsg){
-            _mm.errorTips(errMsg);
-        });
+        const url = decodeURIComponent(window.location.search);
+        const uid = url.substr(5);
+        $('#user-center').attr('href','./index.html?uid='+ uid)
+        const url2 = 'http://127.0.0.1:3000/login/user/info?uid='+uid;
+        _mm.request({
+            url:url2,
+            type:'get',
+        },(data)=>{
+            if(data.msg){
+                userHtml = _mm.renderHtml(templateIndex, data.userInfo);
+                $('.panel-body').html(userHtml);
+            }
+        })
     }
 };
 $(function(){
