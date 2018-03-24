@@ -1,8 +1,8 @@
 /*
 * @Author: mmall
 * @Date:   2017-05-27 17:57:49
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-28 19:48:16
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-24 18:41:20
 */
 
 'use strict';
@@ -13,7 +13,14 @@ var _mm             = require('util/mm.js');
 var _product        = require('service/product-service.js');
 var Pagination      = require('util/pagination/index.js');
 var templateIndex   = require('./index.string');
-
+const url = decodeURIComponent(window.location.search);
+const uid = url.substr(5,2);
+// const Len = $('.w .link').length-4;
+// for(let i =5;i<Len;i++){
+//     let a = $('.w .link')[i]
+//     const value = a.href.substr(50)
+//     a.href = './list.html?' +'uid='+uid+'&keyword='+value
+// }
 var page = {
     data : {
         listParam : {
@@ -79,21 +86,22 @@ var page = {
         listParam.categoryId 
             ? (delete listParam.keyword) : (delete listParam.categoryId);
         // 请求接口
-        _product.getProductList(listParam, function(res){
-            listHtml = _mm.renderHtml(templateIndex, {
-                list :  res.list
-            });
+        const keyword = listParam.keyword;
+        const url = 'http://127.0.0.1:3000/login/cookie/info?keyword='+keyword;
+        _mm.request({
+            url:url,
+            type:'get',
+        },(data)=>{
+            if(data){
+                const result = data.data;
+                result.uid = uid
+                listHtml = _mm.renderHtml(templateIndex, {
+                    list :  result
+                });
             $pListCon.html(listHtml);
-            _this.loadPagination({
-                hasPreviousPage : res.hasPreviousPage,
-                prePage         : res.prePage,
-                hasNextPage     : res.hasNextPage,
-                nextPage        : res.nextPage,
-                pageNum         : res.pageNum,
-                pages           : res.pages
-            });
-        }, function(errMsg){
-            _mm.errorTips(errMsg);
+            }else{
+                $('.p-list-con').html('<p class="err-tip">很抱歉，实在找不到您要的美食。</p>')
+            }
         });
     },
     // 加载分页信息
@@ -107,7 +115,7 @@ var page = {
                 _this.loadList();
             }
         }));
-    }
+    },
 };
 $(function(){
     page.init();

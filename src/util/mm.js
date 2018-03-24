@@ -2,7 +2,7 @@
 * @Author: Rosen
 * @Date:   2017-05-15 15:26:38
 * @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-23 21:25:26
+* @Last Modified time: 2018-03-24 16:02:55
 */
 var Hogan = require('hogan');
 var conf = {
@@ -67,7 +67,8 @@ var _mm = {
     },
     goHome : function(){
         window.location.href = './index.html';
-    }
+    },
+    key:'3b7bc7abf480f29a42e6d3ba74c614fe'
 };
 
 module.exports = _mm;

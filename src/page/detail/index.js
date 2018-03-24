@@ -1,8 +1,8 @@
 /*
 * @Author: Rosen
 * @Date:   2017-05-28 19:45:49
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-29 18:39:01
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-24 18:54:32
 */
 
 'use strict';
@@ -17,7 +17,7 @@ var templateIndex   = require('./index.string');
 
 var page = {
     data : {
-        productId : _mm.getUrlParam('productId') || '',
+        productId : _mm.getUrlParam('keyword') || '',
     },
     init : function(){
         this.onLoad();
@@ -71,16 +71,31 @@ var page = {
         // loading
         $pageWrap.html('<div class="loading"></div>');
         // 请求detail信息
-        _product.getProductDetail(this.data.productId, function(res){
-            _this.filter(res);
-            // 缓存住detail的数据
-            _this.data.detailInfo = res;
-            // render
-            html = _mm.renderHtml(templateIndex, res);
-            $pageWrap.html(html);
-        }, function(errMsg){
-            $pageWrap.html('<p class="err-tip">此商品太淘气，找不到了</p>');
+        const keyword = this.data.productId;
+        const url = 'http://127.0.0.1:3000/login/cookie/info?keyword='+keyword;
+        _mm.request({
+            url:url,
+            type:'get',
+        },(data)=>{
+            if(data){
+                const result = data.data[0]
+                console.log(result)
+               html = _mm.renderHtml(templateIndex, result);
+               $pageWrap.html(html);
+            }else{
+                 $pageWrap.html('<p class="err-tip">此美食太淘气，找不到了</p>');
+            }
         });
+        // _product.getProductDetail(this.data.productId, function(res){
+        //     _this.filter(res);
+        //     // 缓存住detail的数据
+        //     _this.data.detailInfo = res;
+        //     // render
+            // html = _mm.renderHtml(templateIndex, res);
+            // $pageWrap.html(html);
+        // }, function(errMsg){
+        //     $pageWrap.html('<p class="err-tip">此美食太淘气，找不到了</p>');
+        // });
     },
     // 数据匹配
     filter : function(data){
