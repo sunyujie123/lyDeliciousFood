@@ -2,7 +2,7 @@
 * @Author: Rosen
 * @Date:   2017-05-17 14:17:01
 * @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-23 21:44:20
+* @Last Modified time: 2018-03-24 20:59:41
 */
 
 'use strict';
@@ -13,8 +13,8 @@ var _cart   = require('service/cart-service.js');
 // 导航
 var nav = {
     init : function(){
-        this.bindEvent();
         this.loadUserInfo();
+        this.bindEvent();
         // this.loadCartCount();
         return this;
     },
@@ -31,13 +31,20 @@ var nav = {
         $('.js-logout').click(function(){
             window.location.href = './index.html'
         });
+        // 模态框关闭
+        $('.close').click(function(){
+             $('.bg-model').hide()
+        })
     },
     // 加载用户信息
     loadUserInfo : function(){
         const url = decodeURIComponent(window.location.search);
         const uid = url.substr(5)
-        $('#user').attr('href','./user-center.html?uid='+uid);
-        const url2 = 'http://127.0.0.1:3000/login/user/session?uid='+uid;
+        if(!uid){
+            $('.bg-model').show()
+        }else{
+            $('#user').attr('href','./user-center.html?uid='+uid);
+            const url2 = 'http://127.0.0.1:3000/login/user/session?uid='+uid;
             _mm.request({
                 url:url2,
                 type:'get',
@@ -46,6 +53,7 @@ var nav = {
                     $('.user.not-login').hide().siblings('.user.login').show().find('.username').text(data.username);
                 }
             })
+        }
     },
     // 加载购物车数量
     // loadCartCount : function(){
