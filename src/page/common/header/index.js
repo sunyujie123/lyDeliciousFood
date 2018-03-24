@@ -2,7 +2,7 @@
 * @Author: Rosen
 * @Date:   2017-05-18 19:30:12
 * @Last Modified by:   Sun Yu Jie
-* @Last Modified time: 2018-03-24 18:15:00
+* @Last Modified time: 2018-03-24 21:16:44
 */
 
 'use strict';
@@ -43,7 +43,9 @@ var header = {
         var keyword = $.trim($('#search-input').val());
         // 如果提交的时候有keyword,正常跳转到list页
         if(keyword){
-            window.location.href = './list.html?keyword=' + keyword;
+            const url = decodeURIComponent(window.location.search);
+            const uid = url.substr(5)
+            window.location.href = './list.html?uid='+uid+'&keyword=' + keyword;
         }
         // 如果keyword为空，直接返回首页
         else{
