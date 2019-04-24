@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9b6724d-d7bd-4f79-9c85-c9b9d1e51229" name="默认的" comment="" />
+    <list default="true" id="d9b6724d-d7bd-4f79-9c85-c9b9d1e51229" name="默认的" comment="默认的">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,7 +16,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -26,6 +39,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
@@ -66,19 +86,26 @@
         <subPane>
           <expand>
             <path>
-              <item name="lyDeliciousFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lyDeliciousFood" type="462c0819:PsiDirectoryNode" />
+              <item name="lyDeliciousFood-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lyDeliciousFood-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lyDeliciousFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lyDeliciousFood" type="462c0819:PsiDirectoryNode" />
+              <item name="lyDeliciousFood-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lyDeliciousFood-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lyDeliciousFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lyDeliciousFood" type="462c0819:PsiDirectoryNode" />
+              <item name="lyDeliciousFood-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lyDeliciousFood-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lyDeliciousFood-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lyDeliciousFood-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+              <item name="banner" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -120,15 +147,24 @@
       <updated>1521643201952</updated>
       <workItem from="1521643204046" duration="40000" />
       <workItem from="1521885041967" duration="163000" />
-      <workItem from="1556090656648" duration="15000" />
+      <workItem from="1556090656648" duration="53000" />
     </task>
+    <task id="LOCAL-00001" summary="默认的">
+      <created>1556090692227</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556090692227</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218000" />
+    <option name="totallyTimeSpent" value="256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16649105" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -159,6 +195,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认的" />
+    <option name="LAST_COMMIT_MESSAGE" value="默认的" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/util/mm.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -174,6 +214,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
