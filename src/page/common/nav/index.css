@@ -1,0 +1,76 @@
+/*
+* @Author: Sun Yu Jie
+* @Date:   2017-05-17 14:16:54
+* @Last Modified by:   Sun Yu Jie
+* @Last Modified time: 2018-03-24 21:02:23
+*/
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;   
+}
+/* 用户部分 */
+.nav .user{
+    float: left;
+}
+.nav .user.login{
+    display: none;
+}
+.nav .user .link{
+    margin-right: 5px;
+}
+/* 导航链接部分 */
+.nav .nav-list{
+    float: right;
+}
+.nav .nav-list .nav-item{
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+/* 模态框 */
+.bg-model{
+  position:fixed;
+  top:0%;
+  left:0%;
+  display:none;
+  background:rgba(0,0,0,0.3);
+  width:100%;
+  height:100%;
+  z-index:9999
+}
+.bg-model .content{
+  position: absolute;
+  left: 35%;
+  top: 25%;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #009999;
+  width: 30%;
+  height: 30%;
+  background-color: #fff;
+}
+.bg-model .content .info{
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bg-model .close{
+  color: red;
+  position: absolute;
+  right: 36%;
+  top: 27%;
+  width: 30px;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #009966;
+  text-align: center;
+  background-color:#fff;
+  color:#99CCCC;
+  font-weight: bold;
+  border-radius: 8px;
+}

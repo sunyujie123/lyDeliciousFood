@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title %>—洛阳美食</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav.html') %>
+<%= require('html-loader!./layout/header.html') %>
+<div class="w">
+    <ul class="keywords-list">
+        <li class="keywords-item">
+            <a class="link" style="color: #ff8a00;">特色：</a>
+            <a class="link" href="./list.html?keyword=21238">牛肉汤</a>
+            <a class="link" href="./list.html?keyword=21239">胡辣汤</a>
+            <a class="link" href="./list.html?keyword=21237">羊肉汤</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./index.html" class="link" style="color: #ff8a00;">热点：</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="./list.html?keyword=9472">快餐</a>
+            <a class="link" href="./list.html?keyword=7654">川菜</a>
+            <a class="link" href="./list.html?keyword=16095">创意菜</a>
+            <a class="link" href="./list.html?keyword=16089">连锁加盟</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="./list.html?keyword=7656">鲁菜</a>
+            <a class="link" href="./list.html?keyword=15969">徽菜</a>
+            <a class="link" href="./list.html?keyword=7669">大排档</a>
+            <a class="link" href="./list.html?keyword=39590">特色小吃</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="./list.html?keyword=7655">湘菜</a>
+            <a class="link" href="./list.html?keyword=15965">粤菜</a>
+            <a class="link" href="./list.html?keyword=15966">新疆菜</a>
+            <a class="link" href="./list.html?keyword=7529">日本料理</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="./list.html?keyword=7523">海鲜</a>
+            <a class="link" href="./list.html?keyword=7533">火锅</a>
+            <a class="link" href="./list.html?keyword=8811">贵州菜</a>
+            <a class="link" href="./list.html?keyword=7660">韩国料理</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="./list.html?keyword=7558">酒吧</a>
+            <a class="link" href="./list.html?keyword=7664">烧烤</a>
+            <a class="link" href="./list.html?keyword=7923">江浙菜</a>
+            <a class="link" href="./list.html?keyword=7665">粥店面食</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="./list.html?keyword=20340">西餐</a>
+            <a class="link" href="./list.html?keyword=7535">小吃</a>
+            <a class="link" href="./list.html?keyword=15968">东南亚</a>
+            <a class="link" href="./list.html?keyword=35177">咖啡饮品</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" style="color: #ff8a00;">商圈：</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./list.html?keyword=2134" class="link">西工区</a>
+            <a href="./list.html?keyword=2132" class="link">老城区</a>
+            <a href="./list.html?keyword=2133" class="link">涧西区</a>
+            <a href="./list.html?keyword=8799" class="link">瀍河区</a>
+        </li>
+    </ul>
+    <div class="banner-con">
+        <div class="loading"></div>
+    </div>
+</div>
+<div class="w">
+    <div class="floor-wrap">
+        <h1 class="floor-title">F1 传统美食</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?keyword=牛肉面" class="target">
+                    <span class="floor-text">传统牛肉面</span>
+                    <img class="floor-img" src="<%= require('../image/floor/1.jpg') %>" alt="传统牛肉面"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=回锅肉" class="target">
+                    <span class="floor-text">传统回锅肉</span>
+                    <img class="floor-img" src="<%= require('../image/floor/2.jpg') %>" alt="传统回锅肉"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=米粉" class="target">
+                    <span class="floor-text">传统米粉</span>
+                    <img class="floor-img" src="<%= require('../image/floor/3.jpg') %>" alt="传统米粉"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=牛肉" class="target">
+                    <span class="floor-text">传统牛肉</span>
+                    <img class="floor-img" src="<%= require('../image/floor/4.jpg') %>" alt="传统牛肉"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=鸡肉" class="target">
+                    <span class="floor-text">传统鸡块</span>
+                    <img class="floor-img" src="<%= require('../image/floor/5.jpg') %>" alt="传统鸡块"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="floor-wrap">
+        <h1 class="floor-title">F2 特色美食</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?keyword=凉拌" class="target">
+                    <span class="floor-text">特色凉拌</span>
+                    <img class="floor-img" src="<%= require('../image/floor/6.jpg') %>" alt="老城十字街夜市"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=大盘鸡" class="target">
+                    <span class="floor-text">特色大盘鸡</span>
+                    <img class="floor-img" src="<%= require('../image/floor/7.jpg') %>" alt="特色大盘鸡"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=糍粑" class="target">
+                    <span class="floor-text">特色糍粑</span>
+                    <img class="floor-img" src="<%= require('../image/floor/8.jpg') %>" alt="特色糍粑"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=狮子头" class="target">
+                    <span class="floor-text">特色狮子头</span>
+                    <img class="floor-img" src="<%= require('../image/floor/9.jpg') %>" alt="特色狮子头"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=玉米炖牛肉" class="target">
+                    <span class="floor-text">特色玉米炖牛肉</span>
+                    <img class="floor-img" src="<%= require('../image/floor/10.jpg') %>" alt="特色玉米炖牛肉"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="floor-wrap">
+        <h1 class="floor-title">F3 小巷美食</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?keyword=腊肉" class="target">
+                    <span class="floor-text">美味腊肉</span>
+                    <img class="floor-img" src="<%= require('../image/floor/11.jpg') %>" alt="美味腊肉"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=虾" class="target">
+                    <span class="floor-text">油焖大虾</span>
+                    <img class="floor-img" src="<%= require('../image/floor/12.jpg') %>" alt="油焖大虾"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=小羊腿" class="target">
+                    <span class="floor-text">特色小羊腿</span>
+                    <img class="floor-img" src="<%= require('../image/floor/13.jpg') %>" alt="特色小羊腿"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=酱鸭" class="target">
+                    <span class="floor-text">酱鸭</span>
+                    <img class="floor-img" src="<%= require('../image/floor/14.jpg') %>" alt="酱鸭"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=糕点" class="target">
+                    <span class="floor-text">酥饼</span>
+                    <img class="floor-img" src="<%= require('../image/floor/15.jpg') %>" alt="酥饼"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="floor-wrap">
+        <h1 class="floor-title">F4 最爱美食</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?keyword=猪蹄" class="target">
+                    <span class="floor-text">红烧猪蹄</span>
+                    <img class="floor-img" src="<%= require('../image/floor/16.jpg') %>" alt="红烧猪蹄"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=鸡肚" class="target">
+                    <span class="floor-text">爆炒鸡肚</span>
+                    <img class="floor-img" src="<%= require('../image/floor/17.jpg') %>" alt="爆炒鸡肚"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=猪杂" class="target">
+                    <span class="floor-text">爆炒猪杂</span>
+                    <img class="floor-img" src="<%= require('../image/floor/18.jpg') %>" alt="爆炒猪杂"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=酥饼" class="target">
+                    <span class="floor-text">酥饼</span>
+                    <img class="floor-img" src="<%= require('../image/floor/19.jpg') %>" alt="酥饼"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=炸藕片" class="target">
+                    <span class="floor-text">炸藕片</span>
+                    <img class="floor-img" src="<%= require('../image/floor/20.jpg') %>" alt="炸藕片"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="floor-wrap">
+        <h1 class="floor-title">F5 热点美食</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?keyword=酱牛肉" class="target">
+                    <span class="floor-text">酱牛肉</span>
+                    <img class="floor-img" src="<%= require('../image/floor/21.jpg') %>" alt="酱牛肉"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=糖醋鱼" class="target">
+                    <span class="floor-text">糖醋鱼</span>
+                    <img class="floor-img" src="<%= require('../image/floor/22.jpg') %>" alt="糖醋鱼"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=特色糕点" class="target">
+                    <span class="floor-text">特色糕点</span>
+                    <img class="floor-img" src="<%= require('../image/floor/23.jpg') %>" alt="特色糕点"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=麻辣牛肉" class="target">
+                    <span class="floor-text">麻辣牛肉</span>
+                    <img class="floor-img" src="<%= require('../image/floor/24.jpg') %>" alt="麻辣牛肉"/>
+                </a>
+            </li>
+            <li class="floor-item">
+                <a href="./list.html?keyword=卤鸡爪" class="target">
+                    <span class="floor-text">卤鸡爪</span>
+                    <img class="floor-img" src="<%= require('../image/floor/25.jpg') %>" alt="卤鸡爪"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>
