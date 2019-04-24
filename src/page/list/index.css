@@ -1,10 +1,15 @@
 /*
+<<<<<<< HEAD
 * @Author: mmall
+=======
+* @Author: Sun Yu Jie
+>>>>>>> e5f90ce951510f128d211a4c04212b20ac3cfb57
 * @Date:   2017-05-27 18:04:22
 * @Last Modified by:   Sun Yu Jie
 * @Last Modified time: 2018-03-24 17:36:08
 */
 /* 排序按钮 */
+<<<<<<< HEAD
 .sort-con{
     overflow: auto;
 }
@@ -89,4 +94,382 @@
     font-weight: bold;
     text-align: center;
     background: #eee;
+=======
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+	color: #ff9d00;
+	cursor: pointer;
+}
+
+li{
+	float: left;
+	margin-right: 150px;
+	margin-top: 30px;
+}
+/*.i-before, .i-after {*/
+	/*position: absolute;*/
+	/*width: 13px;*/
+	/*height: 10px;*/
+	/*background: url(http://www.mafengwo.cn/cy/10094/0-0-21238-0-0-1.html) no-repeat;*/
+	/*overflow: hidden;*/
+/*}*/
+
+/*.i-after {*/
+	/*background-position: -100px 0;*/
+/*}*/
+
+/*.i-before {*/
+	/*background-position: -80px 0;*/
+/*}*/
+.sort-con {
+	overflow: auto;
+}
+.sort-con .sort-item {
+	float: left;
+	display: inline-block;
+	position: relative;
+	padding: 0 8px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	background: #fff;
+	color: #333;
+	cursor: pointer;
+}
+
+.sort-con .sort-item.active {
+	background: #c60023;
+	border: 1px solid #c60023;
+	color: #fff;
+}
+
+.sort-con .sort-item .fa-sort-desc {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+}
+
+.sort-con .sort-item.asc .fa-sort-desc {
+	opacity: .6;
+}
+
+.sort-con .sort-item.desc .fa-sort-asc {
+	opacity: .6;
+}
+
+/* 列表 */
+.p-list-con {
+	margin-top: 5px;
+	margin-right: -20px;
+	overflow: hidden;
+}
+.p-list-con .p-item {
+	position: relative;
+	width: 500px;
+	float: left;
+	padding: 10px;
+	margin: 0 20px 20px 0;
+	background: #fff;
+}
+
+.p-list-con .p-item .p-img-con {
+	width: 180px;
+	height: 200px;
+}
+
+.p-list-con .p-item .p-img-con .p-img {
+	width: 100%;
+	height: 100%;
+}
+
+.p-list-con .p-item .p-price-con {
+	height: 30px;
+	line-height: 30px;
+	width: 200px;
+}
+
+.p-list-con .p-item .p-price-con .p-price {
+	font-size: 10px;
+	color: #e7380d;
+}
+
+.p-list-con .p-item .p-name-con {
+	height: 40px;
+	overflow: hidden;
+}
+
+.p-list-con .p-item .p-name-con .p-name {
+	line-height: 20px;
+	margin-bottom: 10px;
+	color: #666;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+/* 错误信息 */
+.err-tip {
+	height: 60px;
+	line-height: 60px;
+	color: #f60;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background: #eee;
+}
+
+.poi-list {
+	margin-left: 150px;
+}
+
+.poi-list .item {
+	padding: 26px 7px 30px 225px;
+	border-bottom: 1px dashed #d0d0d0;
+	position: relative;
+	*vertical-align: top;
+}
+.poi-list li{
+	float: left;
+	margin-right: 150px;
+}
+.poi-list .item:hover, .poi-list .item.hover {
+	background-color: #f8f8f8;
+}
+
+.poi-list .item:hover .btn-fav, .poi-list .item.hover .btn-fav {
+	visibility: visible;
+}
+
+.poi-list .item .img {
+	float: left;
+	width: 215px;
+	height: 135px;
+	margin: 4px 0 0 -225px;
+	position: relative;
+}
+
+.poi-list .title {
+	width: 330px;
+	height: 48px;
+}
+
+.poi-list .title h3 {
+	height: 30px;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+.poi-list .title h3 a {
+	color: #ff8a00;
+}
+
+.poi-list .alipaylist {
+	position: relative;
+	color: #42acec;
+	font-size: 12px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.poi-list .alipaylist b {
+	display: inline-block;
+	width: 20px;
+	height: 22px;
+	background: url(http://www.mafengwo.cn/cy/10094/0-0-21238-0-0-1.html) no-repeat;
+	overflow: hidden;
+	vertical-align: -5px;
+	margin-right: 2px
+}
+
+.poi-list .alipaylist span {
+	color: #42acec;
+	font-size: 12px;
+}
+
+.poi-list .alipaylist div.qrcode {
+	position: absolute;
+	left: 0;
+	top: 20px;
+	z-index: 1;
+	display: none
+}
+
+.poi-list .alipaylist .qrcode {
+	position: absolute;
+	z-index: 1;
+	width: 180px;
+	height: 210px;
+	background: #fff;
+	border: 1px solid #e4e4e4;
+	display: none
+}
+
+.poi-list .alipaylist .qrcode .text {
+	font-size: 14px;
+	color: #000;
+	height: 45px;
+	line-height: 45px;
+	text-align: center
+}
+
+.poi-list .alipaylist .qrcode .code {
+	width: 126px;
+	height: 126px;
+	border: 5px solid #ea6000;
+	border-radius: 18px;
+	margin: 0 auto;
+	padding: 5px
+}
+
+.poi-list .alipaylist:hover div.qrcode {
+	display: block
+}
+
+.poi-list .ranking {
+	color: #999;
+}
+
+.poi-list .ranking em {
+	font-size: 14px;
+	font-weight: bold;
+	color: #0d89e3;
+	font-style: normal;
+}
+
+.poi-list .grade {
+	float: right;
+	width: 120px;
+	text-align: right;
+}
+
+.poi-list .grade em {
+	font-style: normal;
+	font-size: 16px;
+	color: #0d89e3;
+	font-family: Arial;
+}
+
+.poi-list .grade .rev-num {
+	margin-top: 5px;
+	color: #999;
+}
+
+.poi-list .rev-info {
+	margin-top: 8px;
+	line-height: 24px;
+	overflow: hidden;
+}
+
+.poi-list .rev-info a {
+	float: left;
+	margin-right: 4px;
+	color: #f57000;
+}
+
+.poi-list .rev-info img {
+	float: left;
+	margin: 4px 5px 0 0;
+}
+
+.poi-list .rev-txt {
+	margin-top: 8px;
+	padding: 0 0 0 25px;
+	position: relative;
+	*zoom: 1;
+}
+
+.poi-list .rev-txt .i-before {
+	left: 3px;
+	top: 5px;
+}
+
+.poi-list .rev-txt .i-after {
+	right: 4px;
+	bottom: 0;
+}
+
+.poi-list .btn-fav {
+	position: absolute;
+	visibility: hidden;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	padding: 6px 0;
+	line-height: 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.6);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	text-align: center;
+}
+
+.poi-list .btn-fav:hover {
+	text-decoration: none;
+}
+
+.poi-list .btn-fav i {
+	display: inline-block;
+	margin: 0 7px 0 0;
+	width: 16px;
+	height: 16px;
+	background: url(http://www.mafengwo.cn/cy/10094/0-0-21238-0-0-1.html) no-repeat -110px -230px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.rank-star {
+	display: inline-block;
+	margin-right: 5px;
+	*display: inline;
+	*zoom: 1;
+	width: 68px;
+	height: 12px;
+	background: url(http://www.mafengwo.cn/cy/10094/0-0-21238-0-0-1.html) no-repeat -60px -34px;
+	overflow: hidden;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.rank-star span {
+	display: inline-block;
+	height: 12px;
+	background: url(http://www.mafengwo.cn/cy/10094/0-0-21238-0-0-1.html) no-repeat -60px -20px;
+	overflow: hidden;
+	vertical-align: top;
+}
+
+.rank-star .star1 {
+	width: 12px;
+}
+
+.rank-star .star2 {
+	width: 26px;
+}
+
+.rank-star .star3 {
+	width: 40px;
+}
+
+.rank-star .star4 {
+	width: 54px;
+}
+
+.rank-star .star5 {
+	width: 68px;
+}
+
+.poi-list .rev-txt .i-before {
+	left: 3px;
+	top: 5px;
+}
+
+.poi-list .rev-txt .i-after {
+	right: 4px;
+	bottom: 0;
+>>>>>>> e5f90ce951510f128d211a4c04212b20ac3cfb57
 }

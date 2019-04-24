@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
 * @Author: Rosen
+=======
+* @Author: Sun Yu Jie
+>>>>>>> e5f90ce951510f128d211a4c04212b20ac3cfb57
 * @Date:   2017-05-18 19:30:12
 * @Last Modified by:   Sun Yu Jie
 * @Last Modified time: 2018-03-24 21:16:44
@@ -18,11 +22,19 @@ var header = {
         this.bindEvent();
     },
     onLoad : function(){
+<<<<<<< HEAD
         var keyword = _mm.getUrlParam('keyword');
         // keyword存在，则回填输入框
         if(keyword){
             $('#search-input').val(keyword);
         };
+=======
+        // var keyword = _mm.getUrlParam('keyword');
+        // // keyword存在，则回填输入框
+        // if(keyword){
+        //     $('#search-input').val(keyword);
+        // };
+>>>>>>> e5f90ce951510f128d211a4c04212b20ac3cfb57
     },
     bindEvent : function(){
         var _this = this;

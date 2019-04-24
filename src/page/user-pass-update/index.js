@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
 * @Author: Rosen
+=======
+* @Author: Sun Yu Jie
+>>>>>>> e5f90ce951510f128d211a4c04212b20ac3cfb57
 * @Date:   2017-05-24 11:03:57
 * @Last Modified by:   Sun Yu Jie
 * @Last Modified time: 2018-03-23 23:07:34
